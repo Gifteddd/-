@@ -1,0 +1,319 @@
+
+@import "../../width.scss";
+
+.requestWindow__container{
+    width: 872px;
+    height: 543px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px #00000033;
+    margin-top: 47px;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.03em;
+    padding: 39px;
+    justify-content: center;
+    align-items: center;
+
+    @include width_1024{
+        width: 100%;  
+        height: 700px; 
+    }
+   
+        .container__form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+
+
+        .leftBox__firstBlock{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .firstBlock__column1{
+                display: flex;
+                flex-direction: column;
+                
+
+                .column1__inn {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 20px;
+                        .inn__input_ok{
+                            
+                            margin-top: 30px;
+                            width: 242px;
+                            height: 43px;
+                            border-radius: 5px;
+                            text-align: left;
+                            border: 1px solid #C7C7C7;
+                            box-shadow: 0px 0px 20px 0px #0000000D;
+                            background-color: white;
+                            color:black;
+                            font-family: Inter;
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 17px;
+                            letter-spacing: 0.03em;
+                           
+                            @include width_979{
+                                width: 100%;
+                            }
+                          
+                        }
+                        .inn__input_ok::placeholder{
+                            color:#949494;
+                            opacity:50%;
+                            text-align: center;
+                            font-family: Inter;
+                            font-size: 18px;
+                            font-weight: 400;
+                            line-height: 22px;
+                            letter-spacing: 0.03em;
+                        }
+                       
+                }
+                .column1__tonality{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 20px;
+                    .tonality__select{
+                        text-align: center;
+                        margin-top: 30px;
+                        width: 242px;
+                        height: 43px;
+                        border-radius: 5px;
+                        border: 1px;
+                        color:black;
+                        border: 1px solid #C7C7C7;
+                        box-shadow: 0px 0px 20px 0px #0000000D;
+                        font-family: Inter;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 17px;
+                        letter-spacing: 0.03em;
+                        text-align: left;
+                        @include width_979{
+                            width: 100%;
+                        }
+                        .select__option{
+                            font-family: Inter;
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 17px;
+                            letter-spacing: 0.03em;
+                            text-align: left;
+                        }
+                      
+                   
+                    }
+
+
+                }
+                .column1__quantity{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 20px;
+
+                    .quantity__input_ok{
+                        background-color: white;
+                        color:black;
+                        font-family: Inter;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 17px;
+                        letter-spacing: 0.03em;
+                        
+                        text-align: left;
+                        margin-top: 30px;
+                        width: 242px;
+                        height: 43px;
+                        border-radius: 5px;
+                        border: 1px solid #C7C7C7;
+                        box-shadow: 0px 0px 20px 0px #0000000D;
+                        @include width_979{
+                            width: 100%;
+                            margin-bottom: 30px;
+                        }
+
+                    }
+                    .quantity__input_ok::placeholder{
+                        color:#949494;
+                        opacity:50%;
+                        text-align: center;
+                        font-family: Inter;
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 22px;
+                        letter-spacing: 0.03em;
+                    }
+                }
+            }
+            .firstBlock__column2{
+                margin-top: 30px;
+
+                @include width_979{
+                display:none;
+                }
+                .column2_stroke{
+                    margin-bottom: 15px;
+                }
+            }    
+        }
+    }
+
+    .leftBox__secondBlock{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @include width_979{
+        flex-direction: column;
+        
+        }
+        
+        .secondBlock__dateInputs_row{
+            display: flex;
+            flex-direction: row; 
+            @include width_979{
+            flex-direction: column;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            }
+          
+        }
+        .secondBlock__dateInputs_column{
+            display: flex;
+            flex-direction: column; 
+        }
+        .secondBlock__btn{
+            margin-left: 170px;
+            width: 305px;
+            height: 59px;
+            border-radius: 5px;
+            border: none;
+            opacity: 50%;
+            background: #5970FF;
+            color:white;
+            cursor: pointer;
+            font-family: Inter;
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 27px;
+            letter-spacing: 0.03em;
+
+            @include width_1024{
+            margin-top: 20px;
+            width: 332px;
+            margin-left: 0px;
+            }
+        }
+    }
+    .leftBox__txt{
+        justify-content: flex-end;
+        color: #949494;
+        opacity: 97%;
+        font-size: 14px;
+        display: flex;
+        margin-right: 40px;
+        @include width_1024{
+            justify-content: flex-start;
+            margin-top: 10px;
+        }
+
+    }
+
+}
+.input_error{
+    opacity:50%;
+    margin-top: 30px;
+    width: 242px;
+    height: 43px;
+    border-radius: 5px;
+    border: 1px;
+    color:  #FF5959;
+    text-align: center;
+    box-shadow: 0px 0px 20px 0px #FF595933;
+    border: 1px solid #FF5959
+}
+
+
+.p_error{
+    color:  #FF5959;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    margin-left: 10px;
+
+}
+
+input[type="checkbox"]:checked, 
+input[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+input[type="checkbox"]:checked + label, 
+input[type="checkbox"]:not(:checked) + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 38px;
+    padding-top: 2px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label:before, 
+input[type="checkbox"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 19px;
+    height: 19px;
+    border: 1px solid black;
+    background-color: #ffffff;
+}
+
+input[type="checkbox"]:checked + label:after, 
+input[type="checkbox"]:not(:checked) + label:after {
+    content: "";
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:checked + label:after, 
+input[type="checkbox"]:not(:checked) + label:after {
+    left: 4.5px;
+    top: 5px;
+    width: 9px;
+    height: 5px;
+    border-left: 3px solid rgb(93, 216, 66);
+    border-bottom: 3px solid rgb(93, 216, 66);
+    border-radius: 1px;
+    transform: rotate(-45deg);
+}
+
+input[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+
+input[type="checkbox"][disabled] + label:before {
+    opacity: 0.4;
+}
+input:disabled + label {
+    opacity: .4;
+  }

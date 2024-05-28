@@ -1,0 +1,38 @@
+@import "../../width.scss";
+
+.slider {
+    display: flex;
+    margin: 70px 0 0 25px;
+    width: 95%;
+    height: 300px;
+
+    @include width_768 {
+        width: 90%;
+    }
+
+    .slider__icon {
+        margin: 22px 0 0 15px;
+    }
+
+    .slider__container {
+        max-width: 95%;
+        min-height: 250px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        margin: 20px 0 0 10px;
+    }
+
+    .slider__text {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0.01em;
+        text-align: left;
+        margin-top: 10px;
+        padding: 20px;
+
+        @include width_1439 {
+            width: 90%;
+        }
+    }
+}

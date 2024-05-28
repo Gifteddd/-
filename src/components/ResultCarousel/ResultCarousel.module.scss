@@ -1,0 +1,131 @@
+@import "../../width.scss";
+
+.slider_container {
+    margin-top: 27px;
+    margin-bottom: 107px;
+    position: relative;
+
+    @include width_768{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slider_container__h2{
+        height: 100%;
+        font-family: Ferry;
+        font-size: 30px;
+        font-weight: 900;
+        line-height: 36px;
+        letter-spacing: 0.02em;
+        text-align: left;
+    }
+
+    .slider_container__variants{
+        margin-top: 17px;
+        margin-bottom: 27px;
+        color: #949494;
+
+    }
+
+    .slider_container__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: absolute;
+        left: 35px;
+        top:152px;
+        width: 132px;
+        height: 158px;
+        font-weight: 500;
+        font-size: 20px;
+        color: white;
+        background-color: #029491;
+        border-radius: 10px 0px 0px 10px;
+        z-index: 1;
+        text-align: center;
+
+        @include width_768{
+            width: 90%;
+            flex-direction: row;
+            border-radius: 10px 10px 0px 0px;
+            height: 75px;
+            align-items: center;
+            margin-top: 140px;
+            top:28px;
+            
+            .header__p{
+                margin-left: 4%;
+            }
+        }
+    }
+    .rightArrow, .leftArrow{
+        margin-top: -30px;
+        position: absolute;
+        z-index: 99;
+    }
+
+    .rightArrow{
+        margin-inline-start: -15px;
+
+    }
+     .leftArrow{
+        margin-inline-start: -160px;
+        @include width_768{
+            margin-inline-start: -20px; 
+        }
+
+     }
+
+  
+    .slider {
+        margin: 0 35px 0 165px;
+        border: 2px solid #029491;
+        border-radius: 10px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+
+        @include width_768{
+            width: 90%;
+            margin: 0;
+            left: 35px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .item {
+            margin: 12px 0;
+
+            .item__wrapper {
+                width: 100px;
+                height: 126px;
+                padding: 2px 16px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                font-size: 18px;
+                text-align: center;
+                letter-spacing: 0.02em;
+                border-right: 2px solid rgba(#949494, .4);
+            
+                @include width_768{
+                    flex-direction: row;
+                    width: 100%;
+                    height: 75px;
+                    margin-top: 50px;
+                    align-items: center;
+                    border-right: none;
+                    padding: 0;
+                }
+            
+            }
+        }
+    }
+
+
+        span {
+            font-size: 18px;
+            line-height: 22px;
+            letter-spacing: 0.02em;
+            margin: 10px auto 0 auto;
+        }
+    }
+    

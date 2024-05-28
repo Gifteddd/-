@@ -1,0 +1,309 @@
+@import "../../width.scss";
+
+.plansContainer {
+    background-color: var(--scan-white);
+    margin: 0 auto; 
+    padding: 0 60px;
+    max-width: 1440px;
+    margin-bottom: 100px;
+}
+
+.planCards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+@media (max-width: 1360px) {
+    .plansContainer {
+        padding: 0 14px;
+        max-width: 375px;
+        margin-bottom: 30px;
+    }
+
+    .planCards {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
+
+.planCard {
+    width: 415px;
+    height: 540px;
+    max-height: 540px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #00000033;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.planHeader {
+    max-height: 132px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.planBeginnerActive {
+    border: 2px solid var(--scan-yellow);
+}
+
+.planProActive {
+    border: 2px solid var(--scan-light-blue);
+}
+
+.planBusinessActive {
+    border: 2px solid var(--scan-black);
+}
+
+.planBeginner {
+    background-color: #FFB64F;
+}
+
+.planPro {
+    background-color: #029491;
+}
+
+.planBusiness {
+    color: #fff;
+    background-color: black;
+}
+
+.planTitle {
+    margin: 10px;
+    margin-top: 30px;
+    padding: 0 20px 20px;
+}
+
+.planTitle h3 {
+    margin: 0;
+    color: var(--scan-black);
+    font-family: 'InterMedium', sans-serif; 
+    font-size: 30px; 
+}
+
+.planTitle p {
+    color: var(--scan-black);
+    font-size: 16px;
+    white-space: nowrap;
+    max-width: 90%;
+}
+
+.planIconContainer {
+    max-width: 100px;
+    max-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.planIcon {
+    width: auto;
+    height: auto;
+    padding: 0 20px;
+}
+
+.planDetails {
+    align-self: flex-start;
+    width: 100%;
+    height: 80px;
+    padding: 30px;
+}
+
+.currentPlanBadgeContainer {
+    min-height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 12px;
+    margin-bottom: -10px;
+}
+
+.currentPlanBadge {
+    width: 134px;
+    height: 24px;
+    background-color: #3BA5E0;
+    border-radius: 10px;
+    color: var(--scan-black);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.planPriceContainer {
+    margin-bottom: 30px;
+}
+
+.planPrices {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.planPrices h3 {
+    color: var(--scan-black);
+    font-family: 'InterMedium', sans-serif;
+    font-size: 30px;
+}
+
+.oldPrice {
+    text-decoration: line-through;
+    font-family: 'InterMedium', sans-serif;
+    font-size: 25px;
+    color: #D2D2D2;
+}
+
+.planPrices h3, .oldPrice {
+    margin: 0;
+}
+
+.planText {
+    color: var(--scan-black);
+    font-size: 18px;
+}
+
+.planTextLarge {
+    font-size: 20px;
+    font-family: 'InterMedium', sans-serif;
+    margin-left: -10px;
+}
+
+.installmentInfo {
+    margin-top: -30px;
+    font-size: 18px;
+}
+
+.planFeatures {
+    display: flex;
+    font-family: 'InterRegular', sans-serif;
+    font-size: 18px;
+    align-items: center;
+}
+
+.featureIcon {
+    margin-right: 10px;
+    width: 24px;
+    height: auto;
+}
+
+.planButtonContainer {
+    margin-top: 70px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.planButton {
+    width: 335px;
+    height: 59px;
+    border-radius: 5px;
+    font-family: 'InterRegular', sans-serif;
+    font-size: 22px;
+    color: var(--scan-white);
+    background-color: var(--scan-blue);
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.planButton.grey {
+    background-color: #D2D2D2;
+    color: var(--scan-black);
+}
+
+.planButton:not(:disabled):hover {
+    cursor: pointer;
+    background-color: var(--scan-light-blue);
+    color: var(--scan-black);
+}
+
+@media (max-width: 1360px) {
+    .planCard {
+        width: 335px;
+        min-width: 335px;
+        height: 512px;
+        max-height: 512px;
+    }
+
+    .planHeader {
+        min-height: 135px;
+        max-height: 135px;
+    }
+
+    .planTitle {
+        margin-top: 60px;
+    }
+
+    .planTitle h3 {
+        font-size: 20px; 
+        margin-bottom: -10px;
+    }
+
+    .planTitle p {
+        font-size: 16px;
+    }
+
+    .planIconContainer {
+        max-width: 80px;
+        max-height: 80px;
+        margin-bottom: 35px;
+        margin-left: -20px;
+        padding-right: 40px;
+    }
+
+    .planDetails {
+        margin-bottom: 20px;
+    }
+
+    .planDetails {
+        padding-left: 20px;
+        min-height: 70px;
+    }
+
+    .planText {
+        font-size: 16px;
+    }
+    
+    .planTextLarge {
+        font-size: 18px;
+        margin-left: 20px;
+    }
+    
+    .installmentInfo {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .planFeatures {
+        display: flex;
+        font-family: 'InterRegular', sans-serif;
+        font-size: 18px;
+        align-items: center;
+        margin-bottom: -30px;
+        margin-top: -20px;
+        margin-left: 20px;
+    }
+
+    .planButtonContainer {
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    
+    .planButton {
+        width: 286.57px;
+        height: 59px;
+        font-size: 18px;
+    }
+}

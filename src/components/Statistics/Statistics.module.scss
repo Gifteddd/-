@@ -1,0 +1,57 @@
+@import "../../width.scss";
+
+.statistics_box{
+    display: flex;
+    align-items: center;
+    width: 175px;
+    height: 63px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d9d9d94b;
+    color:black;
+    justify-content: space-around;
+    
+    
+    
+    .statistics_headers{
+        display:flex;
+        flex-direction: column;
+        
+    .statistics_text{
+        margin-right: 10%;
+        font-family: Inter;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 12px;
+        letter-spacing: 0.02em;
+        text-align: right;
+        opacity: 40%;
+        width: 100%;
+    }
+}
+.statistics_values{
+    display:flex;
+    flex-direction: column;
+    
+
+    .statistic_available{
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+        letter-spacing: 0.02em;
+        opacity: 100%;
+       
+    }
+    .statistics_limit{
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+        letter-spacing: 0.02em;
+        color:#8AC540;
+        opacity: 100%;
+
+    }
+}
+}

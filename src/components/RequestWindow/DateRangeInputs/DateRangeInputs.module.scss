@@ -1,0 +1,90 @@
+
+@import "../../../width.scss";
+
+
+.disclosure__container{
+position: relative;
+display:flex;
+width: 100%;
+
+    .container__buttons{
+            margin-right: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            width: 176px;
+            height: 43px;
+            border-radius: 5px;
+            border: 1px;
+            border: 1px solid #C7C7C7;
+            box-shadow: 0px 0px 20px 0px #0000000D;
+            @include width_1024{
+                width: 332px;
+                margin-bottom: 30px;
+            }
+            
+            
+            .buttons__btn_and_txt{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+            }
+        
+     }
+     .container__calendar{
+        position: absolute;
+        background-color: white;
+     }  
+    
+        
+
+
+}
+.error{
+    display:flex;
+    opacity:50%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 176px;
+    margin-right: 20px;
+    height: 43px;
+    border-radius: 5px;
+    border: 1px;
+    color:  #FF5959;
+    text-align: center;
+    box-shadow: 0px 0px 20px 0px #FF595933;
+    border: 1px solid #FF5959;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}    
+
+.btn_txt{
+    color: #949494;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.btn_date{
+    color: black;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

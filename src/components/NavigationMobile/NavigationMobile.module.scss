@@ -1,0 +1,101 @@
+@import "../../width.scss";
+
+.nav_mobile_close {
+    display: none;
+
+    @include width_1024 {
+        display: flex;
+        height: 73px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px;
+
+        .logo_header {
+            width: 111px;
+        }
+
+        .nav_mobule_close_btn {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+    }
+}
+
+.nav_mobile_open {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: #029491;
+    margin-bottom: 36px;
+    align-content: center;
+    flex-wrap: wrap;
+
+    .nav_mobile_header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav_mobile_btn_close {
+            cursor: pointer;
+        }
+    }
+
+    .navigation_mobile {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 75px;
+
+        .navigation_mobile_link {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19px;
+            letter-spacing: 0.01em;
+            text-align: center;
+            margin-bottom: 26px;
+        }
+    }
+
+    .btn_signup,
+    .btn_action {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    .btn_signup {
+        opacity: 40%;
+    }
+
+    .btn_action {
+        display: flex;
+        justify-content: center;
+        background-color: #7CE3E1;
+        border-radius: 5px;
+        margin-bottom: 78px;
+        width: 70%;
+        height: 52px;
+        font-family: Inter, sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+        align-items: center;
+
+        .btn2__link {
+            display: flex;
+            color: black;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
