@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux'; // Import useDispatch
+import { useSelector, useDispatch } from 'react-redux'; 
 
 import styles from "./SearchPage.module.scss";
 import CompanyINN from '../../components/Search/CompanyINN/CompanyINN';
@@ -47,7 +47,7 @@ const SearchPage = () => {
 
   const [isFormValid, setIsFormValid] = useState(false);
   const navigate = useNavigate();
-  const dispatch = useDispatch(); // Initialize dispatch
+  const dispatch = useDispatch(); 
 
   useEffect(() => {
     const { inn, documentCount, startDate, endDate } = searchParams;
@@ -67,71 +67,78 @@ const SearchPage = () => {
 
   const handleSubmit = useCallback(async (event) => {
     event.preventDefault();
-
+  
     const { inn, tonality, documentCount, startDate, endDate, filters } = searchParams;
     const tonalityMapping = {
       'Любая': 'any',
       'Позитивная': 'positive',
       'Негативная': 'negative'
     };
-
+  
     if (isFormValid) {
-        const innValue = inn;
-        const tonalityValue = tonalityMapping[tonality] || 'any';
-        const limit =  Number(documentCount);
-        const selectedStartDate = `${startDate}T00:00:00+03:00`
-        const selectedEndDate = `${endDate}T23:59:59+03:00`
-
-        const searchParams = {
-            issueDateInterval: {
-                startDate: selectedStartDate,
-                endDate: selectedEndDate
-            },
-            searchContext: {
-              targetSearchEntitiesContext: {
-                targetSearchEntities: [{
-                  type: "company",
-                  sparkId: null,
-                  entityId: null,
-                  inn: innValue,
-                  maxFullness: checkboxStates.maxCompleteness,
-                  inBusinessNews: null
-                }],
-                onlyMainRole: checkboxStates.mainRole,
-                tonality: tonalityValue,
-                onlyWithRiskFactors: checkboxStates.riskFactorsOnly,
-              }
-            },
-            attributeFilters: {
-              excludeTechNews: !checkboxStates.includeMarketNews,
-              excludeAnnouncements: !checkboxStates.includeAnnouncements,
-              excludeDigests: !checkboxStates.includeNewsSummaries,
-            },
-            limit: Number(documentCount),
-            sortType: "sourceInfluence",
-            sortDirectionType: "desc",
-            intervalType: "month",
-            histogramTypes: ["totalDocuments", "riskFactors"]
-          };
-
-        dispatch(setHistogramDate(undefined));
-        dispatch(setPublicationsList(undefined));
-
-        navigate("/results");
-
-        try {
-            const [histogramResponse, publicationsResponse] = await Promise.all([
-                RequestToApi.getHistograms({searchParams}),
-                RequestToApi.getPublicationsList({searchParams})
-            ]);
-
-            console.log(histogramResponse,publicationsResponse)
-            dispatch(setHistogram(histogramResponse));
-            dispatch(setPublicationsList(publicationsResponse.data.items));
-        } catch (error) {
-            console.log("Error: ", error);
+      const innValue = inn;
+      const tonalityValue = tonalityMapping[tonality] || 'any';
+      const limit = Number(documentCount);
+      const selectedStartDate = `${startDate}T00:00:00+03:00`;
+      const selectedEndDate = `${endDate}T23:59:59+03:00`;
+  
+      const searchParams = {
+        issueDateInterval: {
+          startDate: selectedStartDate,
+          endDate: selectedEndDate
+        },
+        searchContext: {
+          targetSearchEntitiesContext: {
+            targetSearchEntities: [{
+              type: "company",
+              sparkId: null,
+              entityId: null,
+              inn: innValue,
+              maxFullness: checkboxStates.maxCompleteness,
+              inBusinessNews: null
+            }],
+            onlyMainRole: checkboxStates.mainRole,
+            tonality: tonalityValue,
+            onlyWithRiskFactors: checkboxStates.riskFactorsOnly,
+          }
+        },
+        attributeFilters: {
+          excludeTechNews: !checkboxStates.includeMarketNews,
+          excludeAnnouncements: !checkboxStates.includeAnnouncements,
+          excludeDigests: !checkboxStates.includeNewsSummaries,
+        },
+        limit: Number(documentCount),
+        sortType: "sourceInfluence",
+        sortDirectionType: "desc",
+        intervalType: "month",
+        histogramTypes: ["totalDocuments", "riskFactors"]
+      };
+  
+      dispatch(setHistogramDate(undefined));
+      dispatch(setPublicationsList(undefined));
+  
+      navigate("/results");
+  
+        const [histogramResponse, publicationsResponse] = await Promise.all([
+          RequestToApi.getHistograms(searchParams),
+          RequestToApi.getPublicationsList(searchParams)
+        ]);
+  
+        console.log('Histogram Response:', histogramResponse.data.data);
+        console.log('Publications Response:', publicationsResponse.data.items);
+  
+        // if (Array.isArray(histogramResponse.data.data)) {
+        //   dispatch(setHistogram(histogramResponse.data.data));
+        // } else {
+        //   console.error('Histogram response is not an array:', histogramResponse);
+        // }
+  
+        if (Array.isArray(publicationsResponse.data.items)) {
+          dispatch(setPublicationsList(publicationsResponse.data.items));
+        } else {
+          console.error('Publications response is not an array:', publicationsResponse);
         }
-
+  
       console.log('Отправка запроса на сервер с данными:', { innValue, tonalityValue, limit, selectedStartDate, selectedEndDate });
     } else {
       console.log('Форма не валидна, перенаправление не выполнено.');
